@@ -21,6 +21,9 @@ body {
 .Cell {
   border: 2px solid #92140c;
   border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .Cell:nth-child(3n + 1) {
@@ -43,4 +46,14 @@ body {
 .Title-name {
   justify-self: center;
   color: #111d4a;
+}
+
+.bi-x-lg {
+  font-size: 4rem;
+  color: #92140c;
+}
+
+.bi-circle {
+  font-size: 4rem;
+  color: #92140c;
 }
