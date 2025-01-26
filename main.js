@@ -2,6 +2,30 @@ let visited = [];
 let player1 = true;
 let player1pos = [];
 let player2pos = [];
+let play1 = false;
+let play2 = false;
+function addEvent(id) {
+    x(id);  // Process the ID
+}
+
+
+//  if (play1 && play2) {
+//             element.removeEventListener("click", handleClick);  // Remove the event listener
+//     }
+function handleClick(event) {
+        const element = event.currentTarget;
+   
+
+    const index = Array.prototype.indexOf.call(CellElement, element) + 1;  // Get the index
+    addEvent(index);
+
+}
+
+let CellElement = document.getElementsByClassName("Cell");
+Array.prototype.forEach.call(CellElement, (element) => {
+    element.addEventListener("click", handleClick);
+});
+
 
 let iswon = () => {
     if ((player1pos[1] && player1pos[2] && player1pos[3]) ||
@@ -40,7 +64,9 @@ let x = (i) => {
         el[i - 1].innerHTML = `
         <i class="bi bi-x-lg"></i>
         `;
-        iswon();
+        if (iswon()) {
+            play1 = true;
+        }
         return;
     
     }
@@ -54,7 +80,10 @@ let x = (i) => {
         el[i - 1].innerHTML = `
         <i class="bi bi-circle"></i>
         `; 
-        iswon();
+        if (iswon()) {
+            play2 = true;
+        }
+
         return;
     }
 }
